@@ -3,6 +3,8 @@ FROM drupal:7-apache-buster
 
 MAINTAINER Lacey-Anne Sanderson <laceyannesanderson@gmail.com>
 
+ARG COMPOSERURL="https://raw.githubusercontent.com/composer/getcomposer.org/3bcc286b08502ea8bb7cbdb3da9915754efe0cb9/web/installer"
+
 USER root
 
 COPY . /app
@@ -28,16 +30,6 @@ RUN apt-get update && apt-get install -y postgresql-11 postgresql-client-11 post
 # Run the rest of the commands as the ``postgres`` user created by the ``postgres-11`` package when it was ``apt-get installed``
 USER postgres
 
-# Create a PostgreSQL role named ``docker`` with ``docker`` as the password and
-# then create a database `docker` owned by the ``docker`` role.
-# Note: here we use ``&&\`` to run commands one after the other - the ``\``
-#       allows the RUN command to span multiple lines.
-RUN    /etc/init.d/postgresql start &&\
-    psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" &&\
-    createdb -O docker docker \
-    && psql --command="CREATE USER drupaladmin WITH PASSWORD 'drupal8developmentonlylocal'" \
-    && psql --command="CREATE DATABASE drupal8_dev WITH OWNER drupaladmin"
-
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible.
 RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/11/main/pg_hba.conf
@@ -50,7 +42,17 @@ EXPOSE 5432
 
 USER root
 
+########## Drupal Additions #####################
+
+# Install composer and drush
+RUN wget $COMPOSERURL -O - -q > composer-setup.php \
+  && php composer-setup.php \
+	&& mv composer.phar /usr/local/bin/composer \
+	&& composer global require drush/drush:8.* \
+  && drush --version
+
 ########## Tripal ###############################
+
 
 ########## Chado ################################
 
