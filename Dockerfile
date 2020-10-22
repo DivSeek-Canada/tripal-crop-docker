@@ -44,15 +44,23 @@ USER root
 
 ########## Drupal Additions #####################
 
+WORKDIR /var/www/html
+
 # Install composer and drush
 RUN wget $COMPOSERURL -O - -q > composer-setup.php \
   && php composer-setup.php \
 	&& mv composer.phar /usr/local/bin/composer \
-	&& composer global require drush/drush:8.* \
-  && drush --version
+	&& composer require drush/drush:8.* \
+  && vendor/bin/drush --version
 
 ########## Tripal ###############################
 
+WORKDIR /var/www/html/sites/all/modules
+
+RUN org='tripal' && repo='tripal' \
+  && url="https://api.github.com/repos/$org/$repo/releases/latest" \
+  && latest=`curl -s $url |  grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/'` \
+  && git clone https://github.com/$org/$repo.git --branch=$latest tripal
 
 ########## Chado ################################
 
