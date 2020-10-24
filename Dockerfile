@@ -32,7 +32,7 @@ USER postgres
 
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible.
-RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/11/main/pg_hba.conf
+RUN cp /app/default_files/postgresql/pg_hba.conf /etc/postgresql/11/main/pg_hba.conf
 
 # And add ``listen_addresses`` to ``/etc/postgresql/11/main/postgresql.conf``
 RUN echo "listen_addresses='*'" >> /etc/postgresql/11/main/postgresql.conf
@@ -75,4 +75,4 @@ RUN mv /app/libraries /var/www/html/sites/all/libraries
 
 ########## Themes ###############################
 # bootstrap divseek_theme
-RUN mv /app/themes /var/www/html/sites/all/themes 
+RUN mv /app/themes /var/www/html/sites/all/themes
