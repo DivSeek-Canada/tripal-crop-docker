@@ -67,8 +67,12 @@ ARG DL_MODULES="advanced_help ctools date dragndrop_upload ds entity field_forma
 RUN /var/www/html/vendor/bin/drush --quiet dl $DL_MODULES \
   && chmod a+x /app/init_scripts/clone_github_modules.sh \
   && /app/init_scripts/clone_github_modules.sh \
-  && git clone -c advice.detachedHead=false --quiet https://gitlab.com/mainlabwsu/tripal_map.git tripal_map
+  && git clone --quiet https://gitlab.com/mainlabwsu/tripal_map.git tripal_map
 
 ########## Libraries ############################
+# d3 blend4php PHP_XLSXWriter_plus elasticsearch-php
+RUN mv /app/libraries /var/www/html/sites/all/libraries
 
 ########## Themes ###############################
+# bootstrap divseek_theme
+RUN mv /app/themes /var/www/html/sites/all/themes 

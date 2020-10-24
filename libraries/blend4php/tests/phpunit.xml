@@ -1,0 +1,27 @@
+<phpunit>
+  <testsuites>
+    <testsuite name="default">
+      <file>GalaxyInstanceTest.php</file>
+      <file>ErrorTest.php</file>
+      <file>RestManagerTest.php</file>
+      <file>HistoriesTest.php</file>
+      <file>HistoryContentsTest.php</file>
+      <file>ToolsTest.php</file>
+      <file>UsersTest.php</file>
+      <file>RolesTest.php</file>
+      <file>LibrariesTest.php</file>
+      <file>LibraryContentsTest.php</file>
+      <file>GroupsTest.php</file>
+      <file>GroupUsersTest.php</file>
+      <file>GroupRolesTest.php</file>
+      <file>JobsTest.php</file>
+      <!--<file>ToolShedRepositoriesTest.php</file>-->
+      <file>WorkflowsTest.php</file>
+      <file>DataSetsTest.php</file>
+      <file>DataTypesTest.php</file>
+      <file>FolderContentsTest.php</file>
+      <file>GenomesTest.php</file>
+      <file>VisualizationsTest.php</file>
+    </testsuite>
+  </testsuites>
+</phpunit>
