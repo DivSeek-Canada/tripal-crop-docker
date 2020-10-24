@@ -25,7 +25,7 @@ RUN mkdir -p /usr/share/man/man1 && mkdir -p /usr/share/man/man7
 # Install PostgreSQL 11
 #  There are some warnings (in red) that show up during the build. You can hide
 #  them by prefixing each apt-get statement with DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y postgresql-11 postgresql-client-11 postgresql-contrib-11
+RUN apt-get update -qq && apt-get install postgresql-11 postgresql-client-11 postgresql-contrib-11 --yes -qq 1> ~/aptget.postgresql.log
 
 # Run the rest of the commands as the ``postgres`` user created by the ``postgres-11`` package when it was ``apt-get installed``
 USER postgres
@@ -47,10 +47,8 @@ USER root
 WORKDIR /var/www/html
 
 # Install composer and drush
-RUN wget $COMPOSERURL -O - -q > composer-setup.php \
-  && php composer-setup.php \
-	&& mv composer.phar /usr/local/bin/composer \
-	&& composer require drush/drush:8.* \
+RUN chmod a+x /app/init_scripts/composer-init.sh \
+  && /app/init_scripts/composer-init.sh \
   && vendor/bin/drush --version
 
 ########## Tripal ###############################
@@ -60,8 +58,17 @@ WORKDIR /var/www/html/sites/all/modules
 RUN org='tripal' && repo='tripal' \
   && url="https://api.github.com/repos/$org/$repo/releases/latest" \
   && latest=`curl -s $url |  grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/'` \
-  && git clone https://github.com/$org/$repo.git --branch=$latest tripal
-
-########## Chado ################################
+  && echo "github/$org/$repo version $latest" \
+  && git config --global advice.detachedHead false \
+  && git clone --quiet https://github.com/$org/$repo.git --branch=$latest tripal
 
 ########## Crop Modules #########################
+ARG DL_MODULES="advanced_help ctools date dragndrop_upload ds entity field_formatter_class field_formatter_settings field_group field_group_table jquery_update libraries link maillog memcache panels queue_ui redirect services ultimate_cron views webform"
+RUN /var/www/html/vendor/bin/drush --quiet dl $DL_MODULES \
+  && chmod a+x /app/init_scripts/clone_github_modules.sh \
+  && /app/init_scripts/clone_github_modules.sh \
+  && git clone -c advice.detachedHead=false --quiet https://gitlab.com/mainlabwsu/tripal_map.git tripal_map
+
+########## Libraries ############################
+
+########## Themes ###############################
