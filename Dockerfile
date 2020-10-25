@@ -43,18 +43,13 @@ EXPOSE 5432
 USER root
 
 ########## Drupal Additions #####################
-
 WORKDIR /var/www/html
-
-# Install composer and drush
 RUN chmod a+x /app/init_scripts/composer-init.sh \
   && /app/init_scripts/composer-init.sh \
   && vendor/bin/drush --version
 
 ########## Tripal ###############################
-
 WORKDIR /var/www/html/sites/all/modules
-
 RUN org='tripal' && repo='tripal' \
   && url="https://api.github.com/repos/$org/$repo/releases/latest" \
   && latest=`curl -s $url |  grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/'` \
@@ -67,12 +62,9 @@ ARG DL_MODULES="advanced_help ctools date dragndrop_upload ds entity field_forma
 RUN /var/www/html/vendor/bin/drush --quiet dl $DL_MODULES \
   && chmod a+x /app/init_scripts/clone_github_modules.sh \
   && /app/init_scripts/clone_github_modules.sh \
-  && git clone --quiet https://gitlab.com/mainlabwsu/tripal_map.git tripal_map
+  && git clone --quiet https://gitlab.com/mainlabwsu/tripal_map.git tripal_map \
+  && cp -R /app/libraries /var/www/html/sites/all/libraries \
+  && cp -R /app/themes /var/www/html/sites/all/themes
 
-########## Libraries ############################
-# d3 blend4php PHP_XLSXWriter_plus elasticsearch-php
-RUN mv /app/libraries /var/www/html/sites/all/libraries
-
-########## Themes ###############################
-# bootstrap divseek_theme
-RUN mv /app/themes /var/www/html/sites/all/themes
+RUN  chmod a+r -R /var/www/html/sites/all \
+  && chown -R www-data:www-data /var/www/html/sites/all
