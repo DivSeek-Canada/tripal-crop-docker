@@ -3,6 +3,24 @@
 
 This docker container contains all the Drupal, Tripal and DivSeek Canada extension modules you need to create your own Tripal Crop site. Furthermore, it contains a number of command-line drush commands to make maitenance and administration of your Tripal crop site more streamlined.
 
+## Current Usage
+```
+docker pull docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.0
+docker run --publish=80:80 --name=tcrop -tid tripal-crop-docker:1.0
+docker exec -it tcrop service postgresql start
+```
+
+Create the database within the container using docker exec to hop inside.
+```
+docker exec -it tcrop su postgres && /bin/bash
+psql
+postgres=# CREATE ROLE tripalcropadmin WITH PASSWORD 'your secure password here!';
+postgres=# ALTER ROLE tripalcropadmin WITH LOGIN;
+postgres=# CREATE DATABASE tripalcropdb WITH OWNER tripalcropadmin;
+```
+
+Then use the web interface to install Drupal and enable the modules.
+
 ## Future Work
 - create a tripal extension module with drush commands
    - install and configure defaults for all Modules
