@@ -66,7 +66,7 @@ RUN org='tripal' && repo='tripal' \
 ARG DL_MODULES="advanced_help ctools date dragndrop_upload ds entity field_formatter_class field_formatter_settings field_group field_group_table jquery_update libraries link maillog memcache panels queue_ui redirect services ultimate_cron views webform"
 RUN /var/www/html/vendor/bin/drush --quiet dl $DL_MODULES \
   && chmod a+x /app/init_scripts/clone_github_modules.sh \
-  && /app/init_scripts/clone_github_modules.sh \
+  && /app/init_scripts/clone_github_modules.sh   \
   && git clone --quiet https://gitlab.com/mainlabwsu/tripal_map.git tripal_map \
   && cp -R /app/libraries/* /var/www/html/sites/all/libraries/ \
   && cp -R /app/themes/* /var/www/html/sites/all/themes/

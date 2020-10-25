@@ -3,7 +3,7 @@
 
 This docker container contains all the Drupal, Tripal and DivSeek Canada extension modules you need to create your own Tripal Crop site. Furthermore, it contains a number of command-line drush commands to make maitenance and administration of your Tripal crop site more streamlined.
 
-**The Tripal Crop Docker does NOT include any data, configuration or installation in current releases. Manual installation and configuration of the Tripal Crop site is required. Check the future work to see plans for upcoming releases.**
+**The Tripal Crop Docker does NOT include any data or configuration in current releases. Manual configuration of the Tripal Crop site is required. Check the future work to see plans for upcoming releases.**
 
 ## Current Usage
 ```
@@ -23,7 +23,6 @@ docker exec -it tcrop /app/init_scripts/startup_container.sh
    - install and configure defaults for all Modules
    - add permissions and roles which make sense
 - create command-line bash commands for easy site management
-   - Initial setup: creates database, installs site, and runs drush commands
    - Certbot: create/renew certificate
    - Upgrade? upgrades drupal and all extension modules
 
