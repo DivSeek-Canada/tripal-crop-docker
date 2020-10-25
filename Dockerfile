@@ -68,8 +68,8 @@ RUN /var/www/html/vendor/bin/drush --quiet dl $DL_MODULES \
   && chmod a+x /app/init_scripts/clone_github_modules.sh \
   && /app/init_scripts/clone_github_modules.sh \
   && git clone --quiet https://gitlab.com/mainlabwsu/tripal_map.git tripal_map \
-  && cp -R /app/libraries /var/www/html/sites/all/libraries \
-  && cp -R /app/themes /var/www/html/sites/all/themes
+  && cp -R /app/libraries/* /var/www/html/sites/all/libraries/ \
+  && cp -R /app/themes/* /var/www/html/sites/all/themes/
 
 RUN  chmod a+r -R /var/www/html/sites/all \
   && chown -R www-data:www-data /var/www/html/sites/all \
