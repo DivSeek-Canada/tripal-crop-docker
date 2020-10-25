@@ -3,8 +3,6 @@ FROM drupal:7-apache-buster
 
 MAINTAINER Lacey-Anne Sanderson <laceyannesanderson@gmail.com>
 
-ARG COMPOSERURL="https://raw.githubusercontent.com/composer/getcomposer.org/3bcc286b08502ea8bb7cbdb3da9915754efe0cb9/web/installer"
-
 USER root
 
 COPY . /app
@@ -37,6 +35,13 @@ RUN cp /app/default_files/postgresql/pg_hba.conf /etc/postgresql/11/main/pg_hba.
 # And add ``listen_addresses`` to ``/etc/postgresql/11/main/postgresql.conf``
 RUN echo "listen_addresses='*'" >> /etc/postgresql/11/main/postgresql.conf
 
+# Create a PostgreSQL role named ``docker`` with ``docker`` as the password and
+# then create a database `docker` owned by the ``docker`` role.
+RUN    /etc/init.d/postgresql start \
+    && psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" \
+    && createdb -O docker docker \
+    && export PGPASSWORD='docker'
+
 # Expose the PostgreSQL port
 EXPOSE 5432
 
@@ -67,4 +72,5 @@ RUN /var/www/html/vendor/bin/drush --quiet dl $DL_MODULES \
   && cp -R /app/themes /var/www/html/sites/all/themes
 
 RUN  chmod a+r -R /var/www/html/sites/all \
-  && chown -R www-data:www-data /var/www/html/sites/all
+  && chown -R www-data:www-data /var/www/html/sites/all \
+  && chmod +x /app/init_scripts/startup_container.sh
