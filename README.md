@@ -50,6 +50,7 @@ docker exec -it tcrop /app/init_scripts/startup_container.sh
 - Drupal 7.73
 - Composer 2.0.2
 - Drush 8.4.5
+- PHP 7.4.11
 - PostgreSQL 11.9
 - Apache 2.4.38
 
