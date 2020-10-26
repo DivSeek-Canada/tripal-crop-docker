@@ -50,7 +50,7 @@ In addition, the tripal-crop-docker contains a large number of Tripal extension 
 
 ## Usage
 
-**1) Pull the most recent image from the Github Package Repository.**  
+**1) Pull the most recent image from the Github Package Repository.**
 
 ```
 docker pull docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.1
