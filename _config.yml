@@ -1,0 +1,23 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Tripal Crop Docker
+tagline:          'Our tools at your fingertips!'
+description:      'A fully provisioned Tripal site aimed at supporting crop-focused and breeding research.'
+url:              https://divseekcanada.github.io/tripal-crop-docker
+baseurl:          /
+
+author:
+  name:           'Lacey-Anne Sanderson'
+  url:            https://github.com/laceysanderson
+
+# Custom vars
+version:          7.x-1.1
+
+github:
+  repo:           https://github.com/DivSeek-Canada/tripal-crop-docker
