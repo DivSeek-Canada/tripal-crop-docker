@@ -32,9 +32,6 @@ USER postgres
 # database are possible.
 RUN cp /app/default_files/postgresql/pg_hba.conf /etc/postgresql/11/main/pg_hba.conf
 
-# And add ``listen_addresses`` to ``/etc/postgresql/11/main/postgresql.conf``
-RUN echo "listen_addresses='*'" >> /etc/postgresql/11/main/postgresql.conf
-
 # Create a PostgreSQL role named ``docker`` with ``docker`` as the password and
 # then create a database `docker` owned by the ``docker`` role.
 RUN    /etc/init.d/postgresql start \
