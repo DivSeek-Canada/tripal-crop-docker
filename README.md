@@ -53,6 +53,7 @@ docker exec -it tcrop /app/init_scripts/startup_container.sh
 - PHP 7.4.11
 - PostgreSQL 11.9
 - Apache 2.4.38
+- Debian 10 (buster)
 
 In addition, the tripal-crop-docker contains a large number of Tripal extension modules to support crop research and breeding activities.
 
