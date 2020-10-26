@@ -32,6 +32,18 @@ docker run --publish=9010:80 --name=tcrop -tid \
 docker exec -it tcrop /app/init_scripts/startup_container.sh
 ```
 
+## Data Types
+
+*The following data types are fully supported in Tripal Crop Docker. Specifically, the full data lifecycle from import, visualization, integration and download are managed. Furthermore, all data is made FAIR through searches, web services, extensive metadata support, summaries, relationships between data points + types, display of integrated data on record pages and multi-format downloads.*
+
+- Germplasm passport & pedigree
+- Phenotypic traits
+- Phenotypic experiments & measurements
+- Genotypic experiments & calls
+- Genetic maps & loci
+- Quantitative trait loci (QTL)
+- Genome assemblies & gene sets
+
 ## Software Stack
 
 *The following software exists within the current tripal-crop-docker image. NOTE: PostgreSQL is inside the same image as Drupal for security reasons as it allows us to close incoming ports.*
