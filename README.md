@@ -7,8 +7,6 @@ This docker container contains all the Drupal, Tripal and DivSeek Canada extensi
 
 ## Usage
 
-*The following commands will 
-
 1. Pull the most recent image from the Github Package Repository.
 ```
 docker pull docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.1
