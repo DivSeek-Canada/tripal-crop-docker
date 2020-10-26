@@ -5,7 +5,10 @@ This docker container contains all the Drupal, Tripal and DivSeek Canada extensi
 
 **The Tripal Crop Docker does NOT include any data or configuration in current releases. Manual configuration of the Tripal Crop site is required. Check the future work to see plans for upcoming releases.**
 
-## Current Usage
+## Usage
+
+*The following commands will (1) pull the most recent image from the Github Package Repository, (2) create a running container exposing the website at localhost:9010 and (3) provision the container including installation of the software stack. To customize the installed site, change the variables available in the .env file without removing any.* **Make sure to change DBPASS and ADMINPASS for security reasons.**
+
 ```
 docker pull docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.0
 
@@ -17,6 +20,19 @@ docker run --publish=9010:80 --name=tcrop -tid \
 
 docker exec -it tcrop /app/init_scripts/startup_container.sh
 ```
+
+## Software Stack
+
+*The following software exists within the current tripal-crop-docker image. NOTE: PostgreSQL is inside the same image as Drupal for security reasons as it allows us to close incoming ports.*
+
+- Tripal 3.4
+- Drupal 7.73
+- Composer 2.0.2
+- Drush 8.4.5
+- PostgreSQL 11.9
+- Apache 2.4.38
+
+In addition, the tripal-crop-docker contains a large number of Tripal extension modules to support crop research and breeding activities.
 
 ## Future Work
 - create a tripal extension module with drush commands
