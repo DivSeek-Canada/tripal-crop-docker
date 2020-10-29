@@ -44,6 +44,10 @@ EXPOSE 5432
 
 USER root
 
+########## CERTBOT ##############################
+RUN apt-get update  --yes -qq 1> ~/aptget.update.2.log \
+  && apt-get install certbot python-certbot-apache --yes -qq 1> ~/aptget.certbot.log
+
 ########## Drupal Additions #####################
 WORKDIR /var/www/html
 RUN chmod a+x /app/init_scripts/composer-init.sh \
