@@ -53,7 +53,7 @@ In addition, the tripal-crop-docker contains a large number of Tripal extension 
 **1) Pull the most recent image from the Github Package Repository.**
 
 ```
-docker pull docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.1
+docker pull docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.2
 ```
 
 **2) Create a running container exposing the website at localhost:9010**
@@ -65,7 +65,7 @@ docker run --publish=9010:80 --name=tcrop -tid \
   -e DBPASS='some secure password!' \
   -e ADMINPASS='another secure password!' \
   --env-file=.env \
-  docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.1
+  docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.2
 ```
 
 **3) Provision the container including installation of the software stack.**
