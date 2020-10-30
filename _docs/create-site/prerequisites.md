@@ -2,9 +2,9 @@
 layout: docs
 title: "Install pre-requisistes"
 permalink: /docs/create-site/prerequisites.html
-nav-parent: /docs/create-site.html
-nav-next: /docs/index.html
-nav-prev: /docs/create-site/hosting.html
+nav-parent: create-site.html
+nav-next: index.html
+nav-prev: create-site/hosting.html
 ---
 
 ***Currently the only pre-requisite is Docker!***

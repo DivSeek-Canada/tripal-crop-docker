@@ -26,9 +26,9 @@ This documentation will show you how to use the Tripal Crop Docker to create and
 
 ## Tutorials:
 
- - [How can I create my own site?](/docs/create-site.html)
-   - [Finding a place to host your site](/docs/create-site/hosting.html)
-   - [Install pre-requisistes](/docs/create-site/prerequisites.html)
+ - [How can I create my own site?](create-site.html)
+   - [Finding a place to host your site](create-site/hosting.html)
+   - [Install pre-requisistes](create-site/prerequisites.html)
    - Deploying the Tripal Crop Docker
    - HTTPS/SSL configuration
    - Customize the default configuration
