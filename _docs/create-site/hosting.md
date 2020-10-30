@@ -2,9 +2,9 @@
 layout: docs
 title: "Finding a place to Host your Portal"
 permalink: /docs/create-site/hosting.html
-nav-parent: create-site.html
-nav-next: create-site/prerequisites.html
-nav-prev: create-site.html
+nav-parent: ../create-site.html
+nav-next: prerequisites.html
+nav-prev: ../create-site.html
 ---
 
 The DivSeek Canada Portal is being designed to run within a Docker Compose deployed system of Docker containers when the application is run on a Linux server or virtual machine.
