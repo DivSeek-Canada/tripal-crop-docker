@@ -1,10 +1,10 @@
 ---
 layout: docs
 title: "Install pre-requisistes"
-permalink: {{ site.baseurl }}/docs/create-site/prerequisites.html
-nav-parent: {{ site.baseurl }}/docs/create-site.html
-nav-next: {{ site.baseurl }}/docs/index.html
-nav-prev: {{ site.baseurl }}/docs/create-site/hosting.html
+permalink: /docs/create-site/prerequisites.html
+nav-parent: create-site.html
+nav-next: index.html
+nav-prev: create-site/hosting.html
 ---
 
 ***Currently the only pre-requisite is Docker!***

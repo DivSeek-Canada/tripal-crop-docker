@@ -1,10 +1,10 @@
 ---
 layout: docs
 title: "ComputeCanada OpenStack Cloud setup"
-permalink: {{ site.baseurl }}/docs/create-site/compute-canada.html
-nav-parent: {{ site.baseurl }}/docs/create-site/hosting.html
-nav-next: {{ site.baseurl }}/docs/create-site/prerequisites.html
-nav-prev: {{ site.baseurl }}/docs/create-site/hosting.html
+permalink: /docs/create-site/compute-canada.html
+nav-parent: create-site/hosting.html
+nav-next: create-site/prerequisites.html
+nav-prev: create-site/hosting.html
 ---
 
 We have chosen to host the main DivSeek Canada portal on the ComputeCanada Cloud. To do so for your portal, first request an allocation which based on the platform requirements listed on the parent page. The following steps indicate how to prepare your allocation for your own portal.
