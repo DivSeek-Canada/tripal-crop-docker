@@ -3,7 +3,7 @@ layout: docs
 title: "Install pre-requisistes"
 permalink: /docs/create-site/prerequisites.html
 nav-parent: ../create-site.html
-nav-next: ../index.html
+nav-next: deployment.html
 nav-prev: hosting.html
 ---
 

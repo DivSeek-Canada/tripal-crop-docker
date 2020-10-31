@@ -13,7 +13,6 @@ This guide will walk you through how to create a copy of the DivSeek Portal. The
 
 1. [Finding a place to host your site](create-site/hosting.html)
 2. [Install pre-requisistes](create-site/prerequisites.html)
-3. Deploying the Tripal Crop Docker
-4. HTTPS/SSL configuration
-5. Customize the default configuration
-6. Changing the look & feel of your site
+3. [Deploying the Tripal Crop Docker](create-site/deployment.html)
+4. [HTTPS/SSL configuration](create-site/https-config.html)
+5. [Changing the look & feel of your site](create-site/customize-look.html)
