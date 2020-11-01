@@ -62,8 +62,8 @@ docker pull docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-
 
 ```
 docker run --publish=9010:80 --name=tcrop -tid \
-  -e DBPASS='some secure password!' \
-  -e ADMINPASS='another secure password!' \
+  -e DBPASS='somesecurepassword' \
+  -e ADMINPASS='anothersecurepassword' \
   --env-file=.env \
   docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.2
 ```
