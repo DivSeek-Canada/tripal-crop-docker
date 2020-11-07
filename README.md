@@ -4,11 +4,11 @@
 
 # Tripal Crop Docker
 
-[![](https://divseek-canada.github.io/tripal-crop-docker/public/full-website-capture.png)](https://divseek-canada.github.io/tripal-crop-docker)
+[![](https://www.divseekcanada.ca/tripal-crop-docker/public/full-website-capture.png)](https://www.divseekcanada.ca/tripal-crop-docker/)
 
 ## Documentation
 
-For our usage instuctions and all our documentation, [click here or on the image above](https://divseek-canada.github.io/tripal-crop-docker).
+For our usage instuctions and all our documentation, [click here or on the image above](https://www.divseekcanada.ca/tripal-crop-docker/).
 
 ## Funding
 
