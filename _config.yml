@@ -10,7 +10,7 @@ title:            Tripal Crop Docker
 tagline:          'Our tools at your fingertips!'
 description:      'A fully provisioned Tripal site aimed at supporting crop-focused and breeding research.'
 url:              https://www.divseekcanada.ca/tripal-crop-docker
-baseurl:          
+baseurl:
 
 author:
   name:           'Lacey-Anne Sanderson'
@@ -21,7 +21,7 @@ collections:
     output: true
 
 # Custom vars
-version:          7.x-1.2
+version:          7.x-1.3
 
 github:
   repo:           https://github.com/divseek-canada/tripal-crop-docker

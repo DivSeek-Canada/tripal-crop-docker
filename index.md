@@ -16,9 +16,7 @@ title: Home
 </div>
 <hr>
 
-This docker container contains all the Drupal, Tripal and DivSeek Canada extension modules you need to create your own Tripal Crop site. Furthermore, it contains a number of command-line drush commands to make maitenance and administration of your Tripal crop site more streamlined.
-
-The Tripal Crop Docker does NOT include any data or configuration in current releases. Manual configuration of the Tripal Crop site is required. Check the future work to see plans for upcoming releases.
+This docker container contains all the Drupal, Tripal and DivSeek Canada extension modules you need to create your own Tripal Crop site. Furthermore, it contains a number of command-line drush commands to make maintenance and administration of your Tripal crop site more streamlined.
 
 ## Data Types
 
@@ -53,7 +51,7 @@ In addition, the tripal-crop-docker contains a large number of Tripal extension 
 **1) Pull the most recent image from the Github Package Repository.**
 
 ```
-docker pull docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.2
+docker pull docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.3
 ```
 
 **2) Create a running container exposing the website at localhost:9010**
@@ -65,7 +63,7 @@ docker run --publish=9010:80 --name=tcrop -tid \
   -e DBPASS='somesecurepassword' \
   -e ADMINPASS='anothersecurepassword' \
   --env-file=.env \
-  docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.2
+  docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.3
 ```
 
 **3) Provision the container including installation of the software stack.**
@@ -73,14 +71,6 @@ docker run --publish=9010:80 --name=tcrop -tid \
 ```
 docker exec -it tcrop /app/init_scripts/startup_container.sh
 ```
-
-## Future Work
-- create a tripal extension module with drush commands
-   - install and configure defaults for all Modules
-   - add permissions and roles which make sense
-- create command-line bash commands for easy site management
-   - Certbot: create/renew certificate
-   - Upgrade? upgrades drupal and all extension modules
 
 ## Funding
 

@@ -10,7 +10,7 @@ nav-prev: prerequisites.html
 **1) Pull the most recent image from the Github Package Repository.**
 
 ```
-docker pull docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.2
+docker pull docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.3
 ```
 
 **2) Create a running container exposing the website at localhost:9010**
@@ -22,7 +22,7 @@ docker run --publish=9010:80 --name=tcrop -tid \
   -e DBPASS='somesecurepassword' \
   -e ADMINPASS='anothersecurepassword' \
   --env-file=.env \
-  docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.2
+  docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.3
 ```
 
 **3) Provision the container including installation of the software stack.**
