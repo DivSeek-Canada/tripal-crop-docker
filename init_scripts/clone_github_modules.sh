@@ -14,6 +14,7 @@ modules[10]='tripal/tripald3'
 modules[11]='tripal/trpdownload_api'
 modules[13]='tripal/trpfancy_fields'
 modules[14]='uofs-pulse-binfo/vcf_filter'
+modules[15]='DivSeek-Canada/tripal-crop-configure'
 
 for repo in "${modules[@]}"; do
   url="https://api.github.com/repos/$repo/releases/latest" \

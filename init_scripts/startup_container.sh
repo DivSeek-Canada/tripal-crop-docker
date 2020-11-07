@@ -47,13 +47,15 @@ vendor/drush/drush/drush trp-run-jobs --username=$DRUPALADMIN
 vendor/drush/drush/drush dis -y overlay
 
 echo "INSTALL REMAINING MODULES"
-vendor/drush/drush/drush pm-enable --yes chado_custom_search trpfancy_fields \
-	tripald3 trpdownload_api
-vendor/drush/drush/drush pm-enable --yes analyzedphenotypes divseek_search  \
-	nd_genotypes tripal_elasticsearch tripal_galaxy tripal_germplasm_importer \
-	tripal_jbrowse tripal_qtl vcf_filter
-vendor/drush/drush/drush pm-enable --yes tripal_map
+vendor/drush/drush/drush pm-enable --yes tcrop_config
+vendor/drush/drush/drush tcrop-enable
 vendor/drush/drush/drush trp-run-jobs --username=$DRUPALADMIN
 
 vendor/drush/drush/drush pm-enable --yes bootstrap divseek
 vendor/drush/drush/drush vset theme_default divseek
+
+echo "CONFIGURE DEFAULTS"
+vendor/drush/drush/drush tcrop-config
+vendor/drush/drush/drush cc all
+vendor/drush/drush/drush tcrop-display
+vendor/drush/drush/drush cc all
