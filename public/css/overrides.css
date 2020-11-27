@@ -1,0 +1,30 @@
+/* Green */
+.sidebar {
+  background-color: #669C21;
+}
+.content a,
+.related-posts li a:hover {
+  color: #669C21;
+}
+
+.doc-nav {
+  display: inline-flex;
+  width: 100%;
+  margin: 20px 0;
+}
+.doc-nav a {
+  flex-grow: 1;
+}
+.doc-nav a.prev img {
+  float:left;
+}
+.doc-nav a.parent img {
+  margin-left: auto;
+  margin-right: auto;
+}
+.doc-nav a.next img {
+  float: right;
+}
+.doc-nav img {
+  height: 32px;
+}
