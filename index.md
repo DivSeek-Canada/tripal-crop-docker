@@ -8,7 +8,7 @@ permalink: /
 
 <div style="text-align:center;">
 
-<img style="margin: 5px auto" src="{{ site.baseurl }}/public/DivseekCan_Green_CapYes.png" />
+<img style="margin: 5px auto" src="{{ site.baseurl }}/assets/images/DivseekCan_Green_CapYes.png" />
 
 <h2>We used <a href="https://www.docker.com/why-docker">Docker</a> so you can have <br /> your OWN breeder-focused portal!</h2>
 
