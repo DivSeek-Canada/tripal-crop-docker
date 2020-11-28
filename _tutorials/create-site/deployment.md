@@ -5,6 +5,7 @@ permalink: /tutorials/create-site/deployment
 nav_order: 3
 parent: "How can I create my own site?"
 ---
+{% assign url_prefix = site.baseurl | append: "/tutorials/create-site" %}
 
 **1) Pull the most recent image from the Github Package Repository.**
 

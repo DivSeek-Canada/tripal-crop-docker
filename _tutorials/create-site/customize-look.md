@@ -5,6 +5,7 @@ permalink: /tutorials/create-site/customize-look
 nav_order: 5
 parent: "How can I create my own site?"
 ---
+{% assign url_prefix = site.baseurl | append: "/tutorials/create-site" %}
 
 The Tripal Crop Docker sets up a Drupal site extended for biological data using Tripal. Drupal makes it easy to change the look and feel of your site using pre-packaged themes!
 

@@ -5,6 +5,7 @@ permalink: /tutorials/create-site/prerequisites
 nav_order: 2
 parent: "How can I create my own site?"
 ---
+{% assign url_prefix = site.baseurl | append: "/tutorials/create-site" %}
 
 ***Currently the only pre-requisite is Docker!***
 

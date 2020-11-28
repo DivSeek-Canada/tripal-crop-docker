@@ -5,6 +5,7 @@ permalink: /tutorials/create-site/hosting
 nav_order: 1
 parent: "How can I create my own site?"
 ---
+{% assign url_prefix = site.baseurl | append: "/tutorials/create-site" %}
 
 The DivSeek Canada Portal is being designed to run within a Docker Compose deployed system of Docker containers when the application is run on a Linux server or virtual machine.
 
@@ -26,4 +27,4 @@ The DivSeek Canada Portal is being designed to run within a Docker Compose deplo
 
 ## Host-specific Instructions:
 
- - [ComputeCanada OpenStack Cloud setup](compute-canada.html)
+ - [ComputeCanada OpenStack Cloud setup]({{url_prefix}}/compute-canada.html)

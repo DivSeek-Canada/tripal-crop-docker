@@ -16,7 +16,7 @@
 title: Tripal Crop Docker
 description: A fully provisioned Tripal site aimed at supporting crop-focused and breeding research.
 baseurl: "/tripal-crop-docker" # the subpath of your site, e.g. /blog
-url: "https:divseek-canada.ca" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.divseek-canada.ca" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"
