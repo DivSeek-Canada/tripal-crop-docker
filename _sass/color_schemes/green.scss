@@ -1,0 +1,123 @@
+
+$custom-green-000: #b0e26f !default;
+$custom-green-100: #669C21 !default;
+$custom-green-200: #4c7713 !default;
+$custom-green-300: #2c4f00 !default;
+
+$custom-blue: #00AEEF !default;
+
+$body-background-color: $white;
+$sidebar-color: $custom-green-100;
+$border-color: $custom-green-000;
+
+$body-text-color: $grey-dk-300;
+$body-heading-color: $grey-dk-000;
+$nav-child-link-color: $grey-lt-000;
+$search-result-preview-color: $grey-dk-000;
+
+$link-color: $custom-blue;
+$btn-primary-color: $custom-blue;
+$base-button-color: $custom-green-100;
+
+$code-background-color: $grey-lt-200;
+$search-background-color: $grey-lt-200;
+$table-background-color: $grey-lt-200;
+$feedback-color: darken($sidebar-color, 3%);
+
+.sidebar-about h1 {
+    color: #fff;
+    font-family: "Abril Fatface", serif;
+    font-size: 3.25rem;
+    text-align: left;
+}
+
+.main-content {
+  h2.frontpage-h2 {
+    width: 500px;
+    text-align: center;
+    margin: 10px auto 15px auto;
+    color: #000;
+  }
+
+  h3.frontpage-h3 {
+    width: 600px;
+    text-align: center;
+    margin: 15px auto 30px auto;
+    color: #000;
+  }
+
+  .frontpage-center {
+    text-align: center;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $custom-green-200;
+  }
+
+  .right-align {
+    text-align: right;
+  }
+
+  footer a {
+    color: $grey-dk-100;
+  }
+
+  footer #gh-edit a {
+    color: $custom-green-200;
+  }
+}
+
+.side-bar {
+
+  .site-nav, .site-header, .site-footer {
+      width: 275px;
+  }
+
+  .icon {
+    color: $white;
+  }
+
+  .site-title {
+    color: $white;
+    font-family: "Abril Fatface", serif;
+    font-weight: bold;
+  }
+
+  .sidebar-about {
+
+    h1 {
+        margin: 32px 32px 10px 32px;
+        font-size: 3.25em !important;
+        width: 100px;
+    }
+
+    h1 a {
+      color: $white;
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: $custom-green-000;
+      margin: 0 32px 10px 32px;
+      width: 200px;
+    }
+  }
+
+  nav {
+
+    div.nav-category {
+      border-bottom: 0;
+    }
+    a {
+      color: $white;
+    }
+  }
+
+  footer {
+    color: $custom-green-200;
+  }
+  footer a {
+    color: $custom-green-300;
+  }
+}

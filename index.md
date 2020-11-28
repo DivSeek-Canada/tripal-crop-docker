@@ -6,18 +6,21 @@ description: "A fully provisioned Tripal site aimed at supporting crop-focused a
 permalink: /
 ---
 
-<div style="text-align:center;">
 
-<img style="margin: 5px auto" src="{{ site.baseurl }}/assets/images/DivseekCan_Green_CapYes.png" />
+![Logo]({{site.baseurl}}/assets/images/DivseekCan_Green_CapYes.png)
+{: .frontpage-center }
 
-<h2>We used <a href="https://www.docker.com/why-docker">Docker</a> so you can have <br /> your OWN breeder-focused portal!</h2>
+## We used [Docker](https://www.docker.com/why-docker) so you can have <br /> your OWN breeder-focused portal!
+{: .frontpage-h2 }
 
-<h4>We like to think of docker as packaging our website framework and tools <br /> into a <a href="https://www.docker.com/resources/what-container">present</a> just for you!</h4>
 
-<p>Either use your own hosting solution or the Compute Canada OpenStack cloud <br /> and Follow our super simple, unwrapping instructions to auto-magically create your own customized portal!</p>
+### We like to think of docker as packaging our website framework and tools into a [present](https://www.docker.com/resources/what-container) just for you!
+{: .frontpage-h3 }
 
-</div>
-<hr>
+_Either use your own hosting solution or the Compute Canada OpenStack cloud and Follow our super simple, unwrapping instructions to auto-magically create your own customized portal!_
+{: .frontpage-center }
+
+---
 
 This docker container contains all the Drupal, Tripal and DivSeek Canada extension modules you need to create your own Tripal Crop site. Furthermore, it contains a number of command-line drush commands to make maintenance and administration of your Tripal crop site more streamlined.
 
