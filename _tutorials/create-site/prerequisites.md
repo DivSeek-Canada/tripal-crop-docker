@@ -11,7 +11,7 @@ parent: "How can I create my own site?"
 
 ## Installation of Docker
 
-To run Docker, you'll obviously need to [install Docker first](https://docs.docker.com/engine/installation/) in your target Linux operating environment (bare metal server or virtual machine running Linux).
+To run Docker, you will need to [install Docker first](https://docs.docker.com/engine/installation/) in your target Linux operating environment (bare metal server or virtual machine running Linux).
 
 For our installations, we typically use Ubuntu Linux, for which there is an [Ubuntu-specific docker installation](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#install-using-the-repository) using the repository.
 
