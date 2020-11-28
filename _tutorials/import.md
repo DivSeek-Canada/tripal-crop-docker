@@ -7,7 +7,16 @@ permalink: /tutorials/import
 ---
 {% assign url_prefix = site.baseurl | append: "/tutorials" %}
 
+## Table of contents
+{: .no_toc .text-delta }
+
+ - TOC
+{:toc}
+
+
 All data, with the exception of genotypic data, can be imported into your site using friendly web-based forms!
+
+## Web-based Data Import Forms
 
 1. To import data, go to "Tripal" on the top administration toolbar. The click on "Data Loaders".
 
@@ -34,3 +43,13 @@ To do this, you first need to SSH into your server. For the [ComputeCanada OpenS
 ```
 sudo docker exec -it --workdir=/var/www/html tcrop vendor/bin/drush trp-run-jobs --username=divseek_admin --root=/var/www/html
 ```
+
+Make sure to change the username to match your administrative user as shown in the screenshot for this step!
+
+## Genotypic Data
+
+Genotypic Data is fully imported on the command-line. There are [detailed instructions](https://genotypes-loader.readthedocs.io/en/latest/usage.html) on the Tripal Genotypes Loader extension module documentation.
+
+## Phenotypic Data
+
+The web-based for for phenotypic data has multiple steps as it validates data before importing it. You can find [detailed instructions](https://analyzedphenotypes.readthedocs.io/en/latest/user_guide/loading.html) on the Tripal Analyzed Phenotypes extension module documentation.
