@@ -5,8 +5,14 @@ nav_order: 4
 has_children: false
 permalink: /docs/Tripal-Drupal
 ---
+{% assign url_prefix = site.baseurl | append: "/assets/videos" %}
 
 Both Drupal and Tripal provide the framework for your site. Drupal is a content management system which provides edit an advanced administrative form for managing your site. For example, when you change the look and feel of your site or add basic pages, that is Drupal making your life easier! Tripal extends Drupal to provide support for biological data. For example, when importing and displaying biological data, that is Tripal at work.
+
+<video width="800" height="450" controls>
+ <source src="{{url_prefix}}/drupal-tripal-explainer.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 ## Drupal
 
