@@ -6,21 +6,20 @@ nav_order: 2
 toc_name: "Available Tutorials"
 permalink: /tutorials
 ---
+{% assign url_prefix = site.baseurl | append: "/tutorials" %}
 
 # Tutorials
 
 ## Topics
 {: .toc-header }
 
- - [How can I create my own site?](/tutorials/create-site/)
-    - [Finding a place to host your site](/tutorials/create-site/)
-        - [ComputeCanada OpenStack Cloud setup](/tutorials/create-site/)
-    - [Install pre-requisites](/tutorials/create-site/)
-    - [Deploying the Tripal Crop Docker](/tutorials/create-site/)
-    - [HTTPS/SSL configuration](/tutorials/create-site/)
-    - [Changing the look & feel of your site](/tutorials/create-site/)
- - [How do I import my data?](/tutorials/import/)
- - [Adding JBrowse support for your site](tutorials/jbrowse)
- - [Adding a Galaxy installation](tutorials/galaxy/)
- - [How do I backup my site?](/tutorials/backup/)
- - [How do I recover my site from a backup?](/tutorials/restore/)
+ - [How can I create my own site?]({{url_prefix}}/create-site)
+    - [Finding a place to host your site]({{url_prefix}}/create-site/hosting.html)
+        - [ComputeCanada OpenStack Cloud setup]({{url_prefix}}/create-site/)
+    - [Install pre-requisites]({{url_prefix}}/create-site/prerequisites.html)
+    - [Deploying the Tripal Crop Docker]({{url_prefix}}/create-site/deployment.html)
+    - [HTTPS/SSL configuration]({{url_prefix}}/create-site/https-config.html)
+    - [Changing the look & feel of your site]({{url_prefix}}/create-site/customize-look.html)
+ - [How do I import my data?]({{url_prefix}}/import)
+ - [How do I backup my site?]({{url_prefix}}/backup)
+ - [How do I recover my site from a backup?]({{url_prefix}}/restore)
