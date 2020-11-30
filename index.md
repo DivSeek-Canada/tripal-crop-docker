@@ -8,7 +8,7 @@ permalink: /
 
 
 ![Logo]({{site.baseurl}}/assets/images/DivseekCan_Green_CapYes.png)
-{: .frontpage-center }
+{: .frontpage-center .logo }
 
 ## We used [Docker](https://www.docker.com/why-docker) so you can have <br /> your OWN breeder-focused portal!
 {: .frontpage-h2 }

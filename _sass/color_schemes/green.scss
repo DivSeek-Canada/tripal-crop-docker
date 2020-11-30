@@ -127,7 +127,11 @@ img {
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.31);
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.31);
 }
-
+.logo img {
+  border:0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 video {
   border: 1px solid aae4f7;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.31);
