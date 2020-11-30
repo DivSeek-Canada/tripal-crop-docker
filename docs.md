@@ -10,7 +10,6 @@ permalink: /docs
 
 Would you like more information on Tripal Crop Docker and the technologies behind it? The following pages will give you a great overview with videos, screen captures, and diagrams!
 
- - [How is data made FAIR?]({{site.baseurl}}/docs/FAIR-data)
  - [Overall data network]({{site.baseurl}}/docs/data-network)
  - [Functionality Overview]({{site.baseurl}}/docs/data-support)
  - [What are Tripal & Drupal?]({{site.baseurl}}/docs/Tripal-Drupal)
