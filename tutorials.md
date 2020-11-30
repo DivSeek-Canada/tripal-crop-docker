@@ -15,7 +15,7 @@ permalink: /tutorials
 
  - [How can I create my own site?]({{url_prefix}}/create-site)
     - [Finding a place to host your site]({{url_prefix}}/create-site/hosting.html)
-        - [ComputeCanada OpenStack Cloud setup]({{url_prefix}}/create-site/)
+        - [ComputeCanada OpenStack Cloud setup]({{url_prefix}}/create-site/compute-canada.html)
     - [Install pre-requisites]({{url_prefix}}/create-site/prerequisites.html)
     - [Deploying the Tripal Crop Docker]({{url_prefix}}/create-site/deployment.html)
     - [HTTPS/SSL configuration]({{url_prefix}}/create-site/https-config.html)
