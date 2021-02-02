@@ -15,10 +15,43 @@ To restore your site from a compressed archive, you first need to load the image
 sudo docker load --input tcrop-2020nov28.tar.gz
 ```
 
-Now you should have an image name tcrop-2020nov28 which you can restart your container from. To start the containing, run the following command:
+> **NOTE:** Alternatively, if you chose to store the image privately in [Docker Hub](https://hub.docker.com/) then you can use [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) to pull that image from the cloud to your server. The following command will work with either method.
+{: .note}
+
+Now you should have an image name tcrop-2020nov28 which you can restart your container from. You will need to stop the container currently running your site. When you do this your site will become unavailable through the internet but the container will remain on your server as copy in case you need to roll back this process.
 
 ```
-sudo docker run --name=tcrop tcrop-2020nov28
+sudo docker stop tcrop
+sudo docker rename tcrop tcrop-original
+```
+
+Then to start a new container from the backup, run the following command:
+
+```
+sudo docker run --name=tcrop --publish=80:80 -tid tcrop-2020nov28
+sudo docker exec tcrop service postgresql restart
 ```
 
 And that's it! You should have a working site matching the state of your site when you made the backup.
+
+> **NOTE:** It is highly recommend you check your site after this process to make sure everything is as you expect. Once you have verified you are happy with the process, you can save the original version of the site using the same process as when you backed up your site.
+{: .note }
+
+If you have space concerns, you may decide to delete past containers/images. Once you delete either from your server they are permanently removed and are only recoverable if you backed them up via file or cloud. You can delete old containers using [`docker rm`](https://docs.docker.com/engine/reference/commandline/rm/) and old images using [`docker rmi`](https://docs.docker.com/engine/reference/commandline/rmi/).
+
+### TROUBLESHOOTING:
+
+If something goes wrong and you need to rollback to the original version of your site then use the following commands to return your site to the original version before this backup process began.
+
+1. Stop the failed backup container and rename it to keep it separate.
+```
+sudo docker stop tcrop
+sudo docker rename tcrop tcrop-failedbackup
+```
+
+2. Next restart your original container after renaming it back.
+```
+sudo docker rename tcrop-original tcrop
+sudo docker restart tcrop
+sudo docker exec tcrop service postgresql restart
+```
