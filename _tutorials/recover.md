@@ -39,7 +39,9 @@ And that's it! You should have a working site matching the state of your site wh
 
 If you have space concerns, you may decide to delete past containers/images. Once you delete either from your server they are permanently removed and are only recoverable if you backed them up via file or cloud. You can delete old containers using [`docker rm`](https://docs.docker.com/engine/reference/commandline/rm/) and old images using [`docker rmi`](https://docs.docker.com/engine/reference/commandline/rmi/).
 
-### TROUBLESHOOTING:
+## TROUBLESHOOTING:
+
+### Rolling Back a Recovery Attempt
 
 If something goes wrong and you need to rollback to the original version of your site then use the following commands to return your site to the original version before this backup process began.
 
@@ -55,3 +57,13 @@ sudo docker rename tcrop-original tcrop
 sudo docker restart tcrop
 sudo docker exec tcrop service postgresql restart
 ```
+After this point you should have a working site for your users to interact with while you figure out what went wrong.
+
+3. Start the failed backup on your local computer to investigate what went wrong. To do this follow the  instructions for restoring a backup but on your local computer.
+
+4. Check your local site to see if the recovery worked. If it works locally, then the problem is with the server and may be related to docker software versions, permissions or access to hardware resources. If it doesn't work locally then use `docker exec -it tcrop bash` to open a terminal session inside the docker container. This will allow you to check that
+	- the files are all there. Specifically, check the sites/all directories
+	- the /var/www/html/sites/default/settings.php file has the correct database settings in it
+	- if you mounted any directories using --volume when running the original container they may need to be replaced in the backup.
+	- use `drush status` to check that the site is bootstrapped correctly.
+	- use `drush cc all` to clear the cache of your website in case incorrect settings are cached.
