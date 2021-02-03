@@ -39,3 +39,7 @@ You can then copy the compressed archive from the server. [Compute Canada has pr
 > **NOTE:**
 > Alternatively, you can use [Docker Hub](https://hub.docker.com/) or any other docker image hosting platform to store the image in the cloud. I suggest using a _PRIVATE_ repository for this approach as anyone can make a completely functioning clone of your site by running this image. Here is the [documentation for pushing an image to Docker Hub](https://docs.docker.com/docker-hub/repos/).
 {: .note }
+
+> **WARNING:**
+> Docker run has a `--volume` parameter which allows you to mount part of your local file system within the docker container. This is invaluable when developing new modules; however, it **SHOULD NOT BE USED IN PRODUCTION**. If you use `--volume` to mount directories when you use the backup steps above the mounted files will missing from the backup and cause the recover process to not be successful. If you must mount in production then make sure to backup the mounted files separately keeping them timestamped the same as the container as you will need them when recovering the site.
+{: .warning }

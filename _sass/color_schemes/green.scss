@@ -138,14 +138,28 @@ video {
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.31);
 }
 
-blockquote.note
-{
-     -moz-border-radius: 6px;
-     -webkit-border-radius: 6px;
-     background-color: #e8f2da;
-     border: 1px solid #b0e26f;
-     border-radius: 6px;
-     line-height: 18px;
-     overflow: hidden;
-     padding: 15px 60px;
+blockquote.note {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  background-color: #e8f2da;
+  border: 1px solid #b0e26f;
+  border-radius: 6px;
+  line-height: 18px;
+  overflow: hidden;
+  padding: 15px 60px;
+}
+
+blockquote.warning {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  background-color: #FFF3CD;
+  border: 1px solid #D9A229;
+  border-radius: 6px;
+  line-height: 18px;
+  overflow: hidden;
+  padding: 15px 60px;
+}
+
+blockquote.note code, blockquote.warning code {
+  border: 1px solid #dddddd;
 }
