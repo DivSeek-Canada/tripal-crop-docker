@@ -7,30 +7,30 @@ parent: "How can I create my own site?"
 ---
 {% assign url_prefix = site.baseurl | append: "/tutorials/create-site" %}
 
-**1) Login to the Github Package Repository**
-
-GitHub currently requires authentication to access public docker images. As such you will need to first [create a person GitHub access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) and then authenticate using the following command where you have replaced USERNAME with your GitHub username and TOKEN.txt contains your personal access token.
+**1) Pull the most recent image from Docker Hub.**
 
 ```
-cat ~/TOKEN.txt | docker login https://docker.pkg.github.com -u USERNAME --password-stdin
+docker pull divseekcanada/tripal-crop-docker:latest
 ```
 
-**2) Pull the most recent image from the Github Package Repository.**
+**2) Pull down a copy of the default .env file.**
 
 ```
-docker pull docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.3
+wget https://raw.githubusercontent.com/DivSeek-Canada/tripal-crop-docker/master/.env
 ```
+
+*To customize the installed site, change the variables available in the .env file without removing any.*
 
 **3) Create a running container exposing the website at localhost:9010**
 
-*To customize the installed site, change the variables available in the .env file without removing any.* **Make sure to change DBPASS and ADMINPASS for security reasons.**
+**Make sure to change DBPASS and ADMINPASS for security reasons.**
 
 ```
 docker run --publish=9010:80 --name=tcrop -tid \
   -e DBPASS='somesecurepassword' \
   -e ADMINPASS='anothersecurepassword' \
   --env-file=.env \
-  docker.pkg.github.com/divseek-canada/tripal-crop-docker/tripal-crop-docker:1.3
+  divseekcanada/tripal-crop-docker:latest
 ```
 
 **4) Provision the container including installation of the software stack and default configuration.**
