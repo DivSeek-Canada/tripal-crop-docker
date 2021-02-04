@@ -49,4 +49,4 @@ Make sure to change the `Genus`,`species`,`CommonName`,`Abbreviation` with the i
 
 > **NOTE:**
 > Your site will now be available at http://localhost:9010. The administrative username is in your .env file and the password was supplied on the command-line. You can now follow the [tutorial provided by Tripal](https://tripal.readthedocs.io/en/latest/user_guide/drupal_overview.html) to become familiar with the system.
-{: note }
+{: .note }
