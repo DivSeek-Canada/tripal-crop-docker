@@ -20,6 +20,7 @@ permalink: /tutorials
     - [Deploying the Tripal Crop Docker]({{url_prefix}}/create-site/deployment.html)
     - [HTTPS/SSL configuration]({{url_prefix}}/create-site/https-config.html)
     - [Changing the look & feel of your site]({{url_prefix}}/create-site/customize-look.html)
+    - [Setting up Site-wide Search]({{url_prefix}}/create-site/elasticsearch.html)
  - [How do I import my data?]({{url_prefix}}/import)
  - [How do I backup my site?]({{url_prefix}}/backup)
  - [How do I recover my site from a backup?]({{url_prefix}}/restore)

@@ -17,3 +17,4 @@ This guide will walk you through how to create a copy of the DivSeek Portal. The
 3. [Deploying the Tripal Crop Docker]({{url_prefix}}/deployment.html)
 4. [HTTPS/SSL configuration]({{url_prefix}}/https-config.html)
 5. [Changing the look & feel of your site]({{url_prefix}}/customize-look.html)
+6. [Setting up Site-wide Search]({{url_prefix}}/elasticsearch.html)
