@@ -28,7 +28,7 @@ sudo docker rename tcrop tcrop-original
 Then to start a new container from the backup, run the following command:
 
 ```
-sudo docker run --name=tcrop --publish=80:80 -tid tcrop-2020nov28
+sudo docker run --name=tcrop --publish=80:80 --publish=443:443 --publish=5432:5432 -tid tcrop-2020nov28
 sudo docker exec tcrop service postgresql restart
 ```
 
