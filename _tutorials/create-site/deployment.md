@@ -21,12 +21,13 @@ wget https://raw.githubusercontent.com/DivSeek-Canada/tripal-crop-docker/master/
 
 *To customize the installed site, change the variables available in the .env file without removing any.*
 
-**3) Create a running container exposing the website at localhost:9010**
+**3) Create a running container exposing the website at localhost and supporting HTTPS**
 
 **Make sure to change DBPASS and ADMINPASS for security reasons.**
 
 ```
-docker run --publish=9010:80 --name=tcrop -tid \
+docker run --name=tcrop -tid \
+  --publish=80:80 --publish=443:443 --publish=5432:5432 \
   -e DBPASS='somesecurepassword' \
   -e ADMINPASS='anothersecurepassword' \
   --env-file=.env \
@@ -48,5 +49,5 @@ docker exec -it --workdir=/var/www/html tcrop vendor/bin/drush tcrop-species Gen
 Make sure to change the `Genus`,`species`,`CommonName`,`Abbreviation` with the information for your crop. Run this command once per species you would like to add to the resource.
 
 > **NOTE:**
-> Your site will now be available at http://localhost:9010. The administrative username is in your .env file and the password was supplied on the command-line. You can now follow the [tutorial provided by Tripal](https://tripal.readthedocs.io/en/latest/user_guide/drupal_overview.html) to become familiar with the system.
+> Your site will now be available at http://localhost or at the IP address of your machine. The administrative username is in your .env file and the password was supplied on the command-line. You can now follow the [tutorial provided by Tripal](https://tripal.readthedocs.io/en/latest/user_guide/drupal_overview.html) to become familiar with the system.
 {: .note }
