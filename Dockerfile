@@ -52,20 +52,22 @@ RUN apt-get update  --yes -qq 1> ~/aptget.update.2.log \
 WORKDIR /var/www/html
 RUN chmod a+x /app/init_scripts/composer-init.sh \
   && /app/init_scripts/composer-init.sh \
-  && vendor/bin/drush --version
+  && composer remove drush/drush \
+  && cd / && composer global require drush/drush:8.x \
+  && ln -s /root/.composer/vendor/bin/drush /usr/bin/drush
 
 ########## Tripal ###############################
 WORKDIR /var/www/html/sites/all/modules
 RUN org='tripal' && repo='tripal' \
   && url="https://api.github.com/repos/$org/$repo/releases/latest" \
-  && latest=`curl -s $url |  grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/'` \
+  && latest='7.x-3.x' \
   && echo "github/$org/$repo version $latest" \
   && git config --global advice.detachedHead false \
   && git clone --quiet https://github.com/$org/$repo.git --branch=$latest tripal
 
 ########## Crop Modules #########################
 ARG DL_MODULES="advanced_help ctools date dragndrop_upload ds entity field_formatter_class field_formatter_settings field_group field_group_table jquery_update libraries link maillog memcache panels queue_ui redirect services ultimate_cron views webform"
-RUN /var/www/html/vendor/bin/drush --quiet dl $DL_MODULES \
+RUN drush --quiet dl $DL_MODULES \
   && chmod a+x /app/init_scripts/clone_github_modules.sh \
   && /app/init_scripts/clone_github_modules.sh   \
   && git clone --quiet https://gitlab.com/mainlabwsu/tripal_map.git tripal_map \
